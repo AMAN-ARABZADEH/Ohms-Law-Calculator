@@ -12,6 +12,14 @@ function styleResult() {
   result.style.borderBottom = "1px solid black";
   result.style.width = "200px";
   resultsheading.innerHTML = "Result";
+  result.style.color = "black";
+}
+
+function negativeValueChecker(voltage, current, resistance) {
+  if (voltage <= 0 || current <= 0 || resistance <= 0) {
+    return false;
+  }
+  return true;
 }
 
 btn.addEventListener("click", function () {
@@ -20,19 +28,39 @@ btn.addEventListener("click", function () {
   const resistance = parseFloat(document.getElementById("resistance").value);
 
   if (!isNaN(voltage) && !isNaN(current) && isNaN(resistance)) {
-    const res = voltage / current;
-    result.innerHTML = "Resistance: " + res.toFixed(6) + " Ω";
-    styleResult();
+    if (!negativeValueChecker(voltage, current, resistance)) {
+      result.innerHTML = "The input values has to be greater then zero!";
+      result.style.color = "red";
+      result.style.borderBottom = "1px solid red";
+    } else {
+      const res = voltage / current;
+      result.innerHTML = "Resistance: " + res.toFixed(6) + " Ω";
+      styleResult();
+    }
   } else if (!isNaN(voltage) && isNaN(current) && !isNaN(resistance)) {
-    const curr = voltage / resistance;
-    result.innerHTML = "Current: " + curr.toFixed(6) + " A";
-    styleResult();
+    if (!negativeValueChecker(voltage, current, resistance)) {
+      result.innerHTML = "The input values has to be greater then zero!";
+      result.style.color = "red";
+      result.style.borderBottom = "1px solid red";
+    } else {
+      const curr = voltage / resistance;
+      result.innerHTML = "Current: " + curr.toFixed(6) + " A";
+      styleResult();
+    }
   } else if (isNaN(voltage) && !isNaN(current) && !isNaN(resistance)) {
-    const volt = current * resistance;
-    result.innerHTML = "Voltage: " + volt.toFixed(6) + " V";
-    styleResult();
+    if (!negativeValueChecker(voltage, current, resistance)) {
+      result.innerHTML = "The input values has to be greater then zero!";
+      result.style.color = "red";
+      result.style.borderBottom = "1px solid red";
+    } else {
+      const volt = current * resistance;
+      result.innerHTML = "Voltage: " + volt.toFixed(6) + " V";
+      styleResult();
+    }
   } else {
     result.innerHTML = "Please enter two values to calculate.";
+    result.style.color = "red";
+    result.style.borderBottom = "1px solid red";
   }
 });
 
