@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Ohm's Law Calculator</title>
+  </head>
+  <body>
+    <h1>
+      Ohm's Law
+      <span style="border-bottom: 2px solid #ff5900">Calculator</span>
+    </h1>
+    <form>
+      <label for="voltage">Voltage (V)</label>
+      <input type="number" id="voltage" name="voltage" required />
+
+      <label for="current">Current (A)</label>
+      <input type="number" id="current" name="current" required />
+
+      <label for="resistance">Resistance (Ω)</label>
+      <input type="number" id="resistance" name="resistance" required />
+
+      <button id="btn" type="button">Calculate</button>
+      <button id="reset" type="reset">Reset</button>
+      <h2 id="results"></h2>
+      <p id="result"></p>
+    </form>
+
+    <script src="main.js"></script>
+  </body>
+</html>

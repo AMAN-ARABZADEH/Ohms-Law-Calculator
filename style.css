@@ -1,0 +1,92 @@
+/* Apply CSS reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set global font properties */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+h1 {
+  text-align: center;
+  margin-top: 3%;
+}
+
+/* Apply flexbox to container */
+form {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  width: 75%;
+  height: 75vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Set styling for inputs and labels */
+label {
+  margin: 0.5rem 0;
+}
+
+input[type="number"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  width: 30%;
+  border-style: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+/* Style buttons */
+button {
+  background-color: #ff5900;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  font-size: 1rem;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+/* Set result section style */
+h2 {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+#result {
+  text-align: center;
+}
+
+/* Add media query for smaller screens */
+@media screen and (max-width: 768px) {
+  form {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 10%;
+  }
+  input[type="number"] {
+    width: 75%;
+  }
+}
