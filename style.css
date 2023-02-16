@@ -7,24 +7,21 @@
 
 /* Set global font properties */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 16px;
   line-height: 1.5;
 }
 h1 {
   text-align: center;
   margin-top: 3%;
+  letter-spacing: 3px;
 }
 
 /* Apply flexbox to container */
 form {
   background-color: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin: 2rem 0;
-  width: 75%;
+  width: 70%;
   height: 75vh;
   position: absolute;
   top: 50%;
@@ -32,48 +29,80 @@ form {
   transform: translate(-50%, -50%);
 }
 
+.voltage-input {
+  padding: 0.3em;
+  margin-bottom: 2em;
+}
+
+.current-input {
+  padding: 0.3em;
+  margin-bottom: 2em;
+}
+
+.resistance-input {
+  padding: 0.3em;
+  margin-bottom: 2em;
+}
+
 /* Set styling for inputs and labels */
 label {
-  margin: 0.5rem 0;
+  margin: 0.5rem 1em;
+  font-size: 1.3rem;
 }
 
 input[type="number"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 0.5rem 0;
-  width: 30%;
+  margin-bottom: 1rem;
+  width: 35vw;
   border-style: none;
-  border-bottom: 1px solid black;
+
+  border-bottom: 1px solid rgb(96, 96, 96);
   outline: none;
+}
+select {
+  padding: 2px;
+  border-radius: 0.7rem;
+  border-style: none;
+  border-top: 1px solid rgb(105, 104, 104);
+  border-bottom: 2px solid rgb(0, 0, 0);
+  outline: none;
+  background-color: #ffffff;
 }
 
 /* Style buttons */
 button {
-  background-color: #ff5900;
+  background-color: #fd5800;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   color: #fff;
   cursor: pointer;
-  width: 100px;
-  height: 30px;
+  width: 30%;
+  height: 5%;
   font-size: 1rem;
   margin: 1rem 0;
   padding: 0.5rem 1rem;
 }
 
-button:hover {
-  background-color: #3e8e41;
-}
-
 /* Set result section style */
 h2 {
-  margin: 2rem 0;
-  text-align: center;
+  text-align: left;
+  width: 70%;
+}
+
+hr {
+  width: 50vw;
 }
 
 #result {
-  text-align: center;
+  text-align: left;
+  margin-right: 50%;
+  width: 70%;
 }
 
 /* Add media query for smaller screens */
@@ -88,5 +117,8 @@ h2 {
   }
   input[type="number"] {
     width: 75%;
+  }
+  hr {
+    width: 75vw;
   }
 }
