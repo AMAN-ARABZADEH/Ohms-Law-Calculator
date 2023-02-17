@@ -6,11 +6,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("btn");
   const resetBtn = document.getElementById("reset");
-  const result = document.getElementById("result");
+  const result = document.getElementById("ohms");
+  const kilo = document.getElementById("kilo");
+  const mega = document.getElementById("mega");
   const resultsheading = document.getElementById("results");
 
   // Listen button
-  btn.addEventListener("click", function () {
+  btn.addEventListener("click", calculate);
+
+  function calculate() {
     // Get the user inputs value
     const voltage = document.querySelector("#voltage").value;
     const current = document.querySelector("#current").value;
@@ -27,39 +31,58 @@ document.addEventListener("DOMContentLoaded", function () {
       voltValue = voltageUnits;
       voltageInV = parseFloat(voltage);
     } else if (voltageUnits === "kilovolts") {
+      voltValue = voltageUnits;
       voltageInV = parseFloat(voltage) * 1000;
     } else if (voltageUnits === "megavolts") {
+      voltValue = voltageUnits;
       voltageInV = parseFloat(voltage) * 1000000;
     }
-    let currentInA;
+    console.log(voltValue);
+    let currentInA, currValue;
 
     if (currentUnits === "amps") {
       currentInA = parseFloat(current);
+      currValue = currentUnits;
     } else if (currentUnits === "kiloamps") {
+      currValue = currentUnits;
       currentInA = parseFloat(current) * 1000;
     } else if (currentUnits === "megaamps") {
+      currValue = currentUnits;
       currentInA = parseFloat(current) * 1000000;
     }
-
-    let resistanceInOhms;
+    console.log(currValue);
+    let resistanceInOhms, resistValue;
     if (resistanceUnits === "ohms") {
+      resistValue = resistanceUnits;
       resistanceInOhms = parseFloat(resistance);
     } else if (resistanceUnits === "kiloohms") {
+      resistValue = resistanceUnits;
       resistanceInOhms = parseFloat(resistance) * 1000;
       console.log(resistanceInOhms.value);
     } else if (resistanceUnits === "megaohms") {
+      resistValue = resistanceUnits;
       resistanceInOhms = parseFloat(resistance) * 1000000;
     }
+    console.log(resistValue);
 
     if (!isNaN(voltageInV) && !isNaN(currentInA) && isNaN(resistanceInOhms)) {
       if (!negativeValueChecker(voltageInV, currentInA, resistanceInOhms)) {
         result.innerHTML = "The input values have to be greater than zero!";
         result.style.color = "red";
       } else {
-        const res = voltageInV / currentInA;
-        result.innerHTML =
-          "Resistance: " + res.toFixed(6) + " " + resistanceUnits;
-        styleResult();
+        if (resistanceUnits === "ohms") {
+          const ohmsres = voltageInV / currentInA;
+          result.innerHTML =
+            "Resistance: " + ohmsres.toFixed(6) + " " + resistanceUnits;
+          const kiloohmsres = voltageInV / currentInA / 1000;
+          kilo.innerHTML =
+            "Resistance: " + kiloohmsres.toFixed(10) + " Kilo ohms";
+          const megOhmsRes = voltageInV / currentInA / 1000000;
+          console.log(megOhmsRes);
+          mega.innerHTML =
+            "Resistance: " + megOhmsRes.toFixed(10) + " mega ohms";
+          styleResult();
+        }
       }
     } else if (
       !isNaN(voltageInV) &&
@@ -91,13 +114,15 @@ document.addEventListener("DOMContentLoaded", function () {
       result.innerHTML = "Please enter two values to calculate.";
       result.style.color = "red";
     }
-  });
+  }
 
   resetBtn.addEventListener("click", function () {
     document.getElementById("voltage").value = "";
     document.getElementById("current").value = "";
     document.getElementById("resistance").value = "";
     result.innerHTML = "";
+    kilo.innerHTML = "";
+    mega.innerHTML = "";
     resultsheading.innerHTML = "";
   });
 
@@ -114,13 +139,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return true;
   }
-
-  const voltageUnitsSelect = document.getElementById("voltage-units");
-  voltageUnitsSelect.addEventListener("change", calculate);
-
-  const currentUnitsSelect = document.getElementById("current-units");
-  currentUnitsSelect.addEventListener("change", calculate);
-
-  const resistanceUnitsSelect = document.getElementById("resistance-units");
-  resistanceUnitsSelect.addEventListener("change", calculate);
 });

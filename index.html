@@ -8,68 +8,84 @@
     <title>Ohm's Law Calculator</title>
   </head>
   <body>
-    <h1>
-      Ohm's Law
-      <span style="border-bottom: 2px solid #ff5900">Calculator</span>
-    </h1>
-    <form>
-      <div class="voltage-input">
-        <label for="voltage">Voltage (V)</label>
-        <input
-          type="number"
-          id="voltage"
-          placeholder="Enter Voltage value..."
-          name="voltage"
-          required
-        />
-        <select name="voltage-units" id="voltage-units">
-          <option value="voltage">V</option>
-          <option value="kilovolts">kilovolts (kV)</option>
-          <option value="megavolts">Megavolts (MV)</option>
-        </select>
-      </div>
+    <section id="form">
+      <h1>
+        Ohm's Law
+        <span style="border-bottom: 2px solid #ff5900">Calculator</span>
+      </h1>
+      <form>
+        <h3>Enter two values to get the rest!</h3>
+        <div class="voltage-input">
+          <label for="voltage">Voltage (V)</label>
+          <input
+            type="number"
+            id="voltage"
+            placeholder="Enter Voltage value..."
+            name="voltage"
+            required
+          />
+          <select name="voltage-units" id="voltage-units">
+            <option value="voltage">V</option>
+            <option value="kilovolts">kilovolts (kV)</option>
+            <option value="megavolts">Megavolts (MV)</option>
+          </select>
+        </div>
 
-      <div class="current-input">
-        <label for="current">Current ( I )</label>
-        <input
-          type="number"
-          id="current"
-          placeholder="Enter Current value..."
-          name="current"
-          required
-        />
-        <select name="currentunits" id="current-units" val>
-          <option value="amps">apms (A)</option>
-          <option value="kiloamps">Kiloamps (kA)</option>
-          <option value="megaamps">Megaamps (MA)</option>
-        </select>
-      </div>
+        <div class="current-input">
+          <label for="current">Current ( I )</label>
+          <input
+            type="number"
+            id="current"
+            placeholder="Enter Current value..."
+            name="current"
+            required
+          />
+          <select name="currentunits" id="current-units" val>
+            <option value="amps">apms (A)</option>
+            <option value="kiloamps">Kiloamps (kA)</option>
+            <option value="megaamps">Megaamps (MA)</option>
+          </select>
+        </div>
 
-      <div class="resistance-input">
-        <label for="resistance">Resistance (R)</label>
-        <input
-          type="number"
-          id="resistance"
-          placeholder="Enter Resistance value..."
-          name="resistance"
-          required
-        />
-        <select name="resistance-units" id="resistance-units">
-          <option value="ohms">Ω</option>
-          <option value="kiloohms">Kiloohms (Ω)</option>
-          <option value="megaohms">Megaohms (MΩ)</option>
-        </select>
-      </div>
-      <hr />
-      <br />
-      <button id="btn" type="button">Calculate</button>
-      <button id="reset" type="reset">Reset</button>
-      <h2 id="results"></h2>
-      <p id="result"></p>
-      <hr />
-    </form>
+        <div class="resistance-input">
+          <label for="resistance">Resistance (R)</label>
+          <input
+            type="number"
+            id="resistance"
+            placeholder="Enter Resistance value..."
+            name="resistance"
+            required
+          />
+          <select name="resistance-units" id="resistance-units">
+            <option value="ohms">Ω</option>
+            <option value="kiloohms">Kiloohms (Ω)</option>
+            <option value="megaohms">Megaohms (MΩ)</option>
+          </select>
+        </div>
+        <hr />
+        <br />
+        <button id="btn" type="button">Calculate</button>
+        <button id="reset" type="reset">Reset</button>
+        <h2 id="results"></h2>
+        <p id="ohms"></p>
+        <p id="kilo"></p>
+        <p id="mega"></p>
+        <hr />
+      </form>
+    </section>
 
-    <br />
+    <section id="img">
+      <div id="center">
+        <h4>
+          The picture below was taken from
+          <a href="https://en.wikipedia.org/wiki/Ohm%27s_law" target="_blank"
+            >wikipedia.</a
+          >
+        </h4>
+        <img src="./ohmslawwiki.png" alt="ohmslawexplained" />
+      </div>
+    </section>
+
     <script src="main.js"></script>
   </body>
 </html>
