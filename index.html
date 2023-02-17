@@ -1,71 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Ohm's Law Calculator</title>
+    <title>ohms lag-kalkylator</title>
   </head>
   <body>
-    <h1>Ohm's Law Calculator</h1>
+    <h1>ohms lag-kalkylator</h1>
     <section id="form">
       <form>
-        <h2>Enter two values to get the rest.</h2>
+        <h2>Ange två värden för att få resten.</h2>
         <div class="voltage-input">
-          <label for="voltage">Voltage (V)</label>
+          <label for="voltage">Spänning (V)</label>
           <input
             type="number"
             id="voltage"
-            placeholder="Enter Voltage value..."
+            placeholder="Ange spänningsvärde..."
             name="voltage"
             required
           />
-          <label for="voltage-units">Choose a value:</label>
+          <label for="voltage-units">Välj ett värde:</label>
           <select name="voltage-units" id="voltage-units">
             <option value="voltage">V</option>
-            <option value="kilovolts">kilovolts (kV)</option>
-            <option value="megavolts">Megavolts (MV)</option>
+            <option value="kilovolts">kilovolt (kV)</option>
+            <option value="megavolts">Megavolt (MV)</option>
           </select>
         </div>
-
+        <!--  -->
         <div class="current-input">
-          <label for="current">Current ( I )</label>
+          <label for="current">Ström ( I )</label>
           <input
             type="number"
             id="current"
-            placeholder="Enter Current value..."
+            placeholder="Ange strömvärde..."
             name="current"
             required
           />
-          <label for="current-units">Choose a value:</label>
+          <label for="current-units">Välj ett värde:</label>
           <select name="current-units" id="current-units">
-            <option value="amps">apms (A)</option>
-            <option value="kiloamps">Kiloamps (kA)</option>
-            <option value="megaamps">Megaamps (MA)</option>
+            <option value="amps">amper (A)</option>
+            <option value="kiloamps">Kiloamper (kA)</option>
+            <option value="megaamps">Megaamper (MA)</option>
           </select>
         </div>
 
         <div class="resistance-input">
-          <label for="resistance">Resistance (R)</label>
+          <label for="resistance">Motstånd (R)</label>
           <input
             type="number"
             id="resistance"
-            placeholder="Enter Resistance value..."
+            placeholder="Ange motståndsvärde..."
             name="resistance"
             required
           />
-          <label for="resistance-units">Choose a value:</label>
+          <label for="resistance-units">Välj ett värde:</label>
           <select name="resistance-units" id="resistance-units">
             <option value="ohms">Ω</option>
-            <option value="kiloohms">Kiloohms (Ω)</option>
-            <option value="megaohms">Megaohms (MΩ)</option>
+            <option value="kiloohms">Kiloohm (kΩ)</option>
+            <option value="megaohms">Megaohm (MΩ)</option>
           </select>
         </div>
         <hr />
         <br />
-        <button id="btn" type="button">Calculate</button>
-        <button id="reset" type="reset">Reset</button>
+        <button id="btn" type="button">Beräkna</button>
+        <button id="reset" type="reset">Återställ</button>
         <h3 id="results"></h3>
         <p id="ohms"></p>
         <p id="kilo"></p>
@@ -77,7 +77,7 @@
     <section id="img">
       <div id="center">
         <h4>
-          The picture below was taken from
+          Bilden nedan togs från
           <a href="https://en.wikipedia.org/wiki/Ohm%27s_law" target="_blank"
             >wikipedia.</a
           >

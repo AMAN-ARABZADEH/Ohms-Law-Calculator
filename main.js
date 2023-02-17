@@ -67,19 +67,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!isNaN(voltageInV) && !isNaN(currentInA) && isNaN(resistanceInOhms)) {
       if (!negativeValueChecker(voltageInV, currentInA, resistanceInOhms)) {
-        result.innerHTML = "The input values have to be greater than zero!";
+        result.innerHTML = "Inmatningsvärdena måste vara större än noll!";
         result.style.color = "red";
       } else {
         if (resistanceUnits === "ohms") {
           const ohmsres = voltageInV / currentInA;
-          result.innerHTML = "Resistance: " + ohmsres.toFixed(6) + " ( Ω )";
+          result.innerHTML = "Motstånd: " + ohmsres.toFixed(6) + " ( Ω )";
           const kiloohmsres = voltageInV / currentInA / 1000;
           kilo.innerHTML =
-            "Resistance: " + kiloohmsres.toFixed(10) + " Kiloohms ( kΩ )";
+            "Motstånd: " + kiloohmsres.toFixed(10) + " Kiloohms ( kΩ )";
           const megOhmsRes = voltageInV / currentInA / 1000000;
           console.log(megOhmsRes);
           mega.innerHTML =
-            "Resistance: " + megOhmsRes.toFixed(10) + " megaohms ( MΩ )";
+            "Motstånd: " + megOhmsRes.toFixed(10) + " megaohms ( MΩ )";
           styleResult();
         }
       }
@@ -89,19 +89,17 @@ document.addEventListener("DOMContentLoaded", function () {
       !isNaN(resistanceInOhms)
     ) {
       if (!negativeValueChecker(voltageInV, currentInA, resistanceInOhms)) {
-        result.innerHTML = "The input values have to be greater than zero!";
+        result.innerHTML = "Inmatningsvärdena måste vara större än noll!";
         result.style.color = "red";
       } else {
         const curr = voltageInV / resistanceInOhms;
-        result.innerHTML = "Current: " + curr.toFixed(6) + " ( A ) ";
+        result.innerHTML = "ström: " + curr.toFixed(6) + " ( A ) ";
         ////////////////
         const kilocurr = voltageInV / resistanceInOhms / 1000;
-        kilo.innerHTML =
-          "Current: " + kilocurr.toFixed(10) + " kiloamps ( kA ) ";
+        kilo.innerHTML = "ström: " + kilocurr.toFixed(10) + " kiloamps ( kA ) ";
         const megcurrs = voltageInV / resistanceInOhms / 1000000;
         console.log(kilocurr);
-        mega.innerHTML =
-          "Current: " + megcurrs.toFixed(10) + " megaamps ( MA ) ";
+        mega.innerHTML = "ström: " + megcurrs.toFixed(10) + " megaamps ( MA ) ";
         styleResult();
       }
     } else if (
@@ -110,23 +108,23 @@ document.addEventListener("DOMContentLoaded", function () {
       !isNaN(resistanceInOhms)
     ) {
       if (!negativeValueChecker(voltageInV, currentInA, resistanceInOhms)) {
-        result.innerHTML = "The input values have to be greater than zero!";
+        result.innerHTML = "Inmatningsvärdena måste vara större än noll!";
         result.style.color = "red";
       } else {
         const volt = currentInA * resistanceInOhms;
-        result.innerHTML = "Voltage: " + volt.toFixed(6) + "Volts ( V )";
+        result.innerHTML = "Spänning: " + volt.toFixed(6) + "Volts ( V )";
         ////////////////
-        const kilovolt = currentInA * resistanceInOhms * 1000;
+        const kilovolt = (currentInA * resistanceInOhms) / 1000;
         kilo.innerHTML =
-          "Current: " + kilovolt.toFixed(10) + " kilovolts ( kV) ";
-        const megvolt = currentInA * resistanceInOhms * 1000000;
+          "Spänning: " + kilovolt.toFixed(10) + " kilovolts ( kV) ";
+        const megvolt = (currentInA * resistanceInOhms) / 1000000;
         console.log(megvolt);
         mega.innerHTML =
-          "Current: " + megvolt.toFixed(10) + " megavolts ( MV ) ";
+          "Spänning: " + megvolt.toFixed(10) + " megavolts ( MV ) ";
         styleResult();
       }
     } else {
-      result.innerHTML = "Please enter two values to calculate.";
+      result.innerHTML = "Vänligen ange två värden att beräkna.";
       result.style.color = "red";
     }
   }
@@ -143,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function styleResult() {
     result.style.width = "200px";
-    resultsheading.innerHTML = "Result";
+    resultsheading.innerHTML = "Resultat: ";
     result.style.color = "black";
   }
 
