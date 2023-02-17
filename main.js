@@ -72,15 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         if (resistanceUnits === "ohms") {
           const ohmsres = voltageInV / currentInA;
-          result.innerHTML =
-            "Resistance: " + ohmsres.toFixed(6) + " " + resistanceUnits;
+          result.innerHTML = "Resistance: " + ohmsres.toFixed(6) + " ( Ω )";
           const kiloohmsres = voltageInV / currentInA / 1000;
           kilo.innerHTML =
-            "Resistance: " + kiloohmsres.toFixed(10) + " Kilo ohms";
+            "Resistance: " + kiloohmsres.toFixed(10) + " Kilo-ohms ( KΩ )";
           const megOhmsRes = voltageInV / currentInA / 1000000;
           console.log(megOhmsRes);
           mega.innerHTML =
-            "Resistance: " + megOhmsRes.toFixed(10) + " mega ohms";
+            "Resistance: " + megOhmsRes.toFixed(10) + " mega-ohms ( MΩ )";
           styleResult();
         }
       }
@@ -94,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         result.style.color = "red";
       } else {
         const curr = voltageInV / resistanceInOhms;
-        result.innerHTML = "Current: " + curr.toFixed(6) + " " + currentUnits;
+        result.innerHTML = "Current: " + curr.toFixed(6) + " ( I ) ";
         styleResult();
       }
     } else if (
@@ -107,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         result.style.color = "red";
       } else {
         const volt = currentInA * resistanceInOhms;
-        result.innerHTML = "Voltage: " + volt.toFixed(6) + " " + voltageUnits;
+        result.innerHTML = "Voltage: " + volt.toFixed(6) + " ( V )";
         styleResult();
       }
     } else {
