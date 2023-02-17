@@ -75,11 +75,11 @@ document.addEventListener("DOMContentLoaded", function () {
           result.innerHTML = "Resistance: " + ohmsres.toFixed(6) + " ( Ω )";
           const kiloohmsres = voltageInV / currentInA / 1000;
           kilo.innerHTML =
-            "Resistance: " + kiloohmsres.toFixed(10) + " Kilo-ohms ( KΩ )";
+            "Resistance: " + kiloohmsres.toFixed(10) + " Kiloohms ( kΩ )";
           const megOhmsRes = voltageInV / currentInA / 1000000;
           console.log(megOhmsRes);
           mega.innerHTML =
-            "Resistance: " + megOhmsRes.toFixed(10) + " mega-ohms ( MΩ )";
+            "Resistance: " + megOhmsRes.toFixed(10) + " megaohms ( MΩ )";
           styleResult();
         }
       }
@@ -93,7 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
         result.style.color = "red";
       } else {
         const curr = voltageInV / resistanceInOhms;
-        result.innerHTML = "Current: " + curr.toFixed(6) + " ( I ) ";
+        result.innerHTML = "Current: " + curr.toFixed(6) + " ( A ) ";
+        ////////////////
+        const kilocurr = voltageInV / resistanceInOhms / 1000;
+        kilo.innerHTML =
+          "Current: " + kilocurr.toFixed(10) + " kiloamps ( kA ) ";
+        const megcurrs = voltageInV / resistanceInOhms / 1000000;
+        console.log(kilocurr);
+        mega.innerHTML =
+          "Current: " + megcurrs.toFixed(10) + " megaamps ( MA ) ";
         styleResult();
       }
     } else if (
@@ -106,7 +114,15 @@ document.addEventListener("DOMContentLoaded", function () {
         result.style.color = "red";
       } else {
         const volt = currentInA * resistanceInOhms;
-        result.innerHTML = "Voltage: " + volt.toFixed(6) + " ( V )";
+        result.innerHTML = "Voltage: " + volt.toFixed(6) + "Volts ( V )";
+        ////////////////
+        const kilovolt = currentInA * resistanceInOhms * 1000;
+        kilo.innerHTML =
+          "Current: " + kilovolt.toFixed(10) + " kilovolts ( kV) ";
+        const megvolt = currentInA * resistanceInOhms * 1000000;
+        console.log(megvolt);
+        mega.innerHTML =
+          "Current: " + megvolt.toFixed(10) + " megavolts ( MV ) ";
         styleResult();
       }
     } else {
