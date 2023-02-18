@@ -9,7 +9,8 @@
 body {
   font-family: "Times New Roman", Times, serif;
   font-size: 16px;
-
+  max-width: 100%;
+  overflow-x: hidden;
   line-height: 1.5;
 }
 
@@ -122,9 +123,14 @@ hr {
   }
   input[type="number"] {
     width: 75%;
+    height: 100%;
   }
   hr {
     width: 75vw;
+  }
+  #img {
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -147,8 +153,8 @@ a {
 }
 
 img {
-  width: 300px;
-  height: 400px;
+  width: 80%;
+  height: 70%;
   z-index: 2;
   display: block;
 }

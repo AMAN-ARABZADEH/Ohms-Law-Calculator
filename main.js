@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function styleResult() {
-    result.style.width = "200px";
+    result.style.width = "250px";
     resultsheading.innerHTML = "Resultat: ";
     result.style.color = "black";
   }
