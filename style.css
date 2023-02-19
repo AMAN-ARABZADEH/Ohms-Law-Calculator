@@ -3,44 +3,42 @@
   margin: 0;
   padding: 0;
 }
-
+/*         <!-- Aman Arabzadeh created this  --> */
 body {
   font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 1rem;
   max-width: 100vw;
-  height: 100vh;
   overflow-x: hidden;
+  letter-spacing: 0.15rem;
 }
 
 #form {
+  min-height: 100%;
   width: 100vw;
-  height: 100vh;
   overflow-x: hidden;
   margin-top: 50px;
+  padding: 2rem;
 }
 
 form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: rgb(255, 255, 255);
-  width: 50vw;
-  height: 90vh;
-  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
 }
 
-.voltage-input {
-  margin-bottom: 2em;
-}
-
+.voltage-input,
+.resistance-input,
 .current-input {
   margin-bottom: 2em;
 }
 
-.resistance-input {
-  margin-bottom: 2em;
-}
 label {
   margin: 0.5rem 1em;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 input[type="number"] {
@@ -48,18 +46,19 @@ input[type="number"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 0.5rem 0;
+  width: 90%;
+  padding: 0.7rem;
   margin-bottom: 1rem;
-  width: 25vw;
+  border-radius: 0.8rem;
   border-style: none;
   border-bottom: 1px solid rgb(96, 96, 96);
   outline: none;
 }
+
 select {
-  padding: 1px;
   text-align: center;
+  width: 30%;
+  padding: 0.1rem;
   border-radius: 0.7rem;
   border-style: none;
   border-top: 1px solid rgb(105, 104, 104);
@@ -68,97 +67,166 @@ select {
   background-color: #ffffff;
 }
 
-button {
+#btn,
+#reset {
   background-color: #fd5800;
-  border: none;
-  border-radius: 10px;
   color: #fff;
+  border: none;
+  border-radius: 0.8rem;
   cursor: pointer;
-
+  width: 45%;
   font-size: 1rem;
-  margin: 1rem 0;
+  margin: 2rem 0;
   padding: 0.5rem 1rem;
 }
 
 h2 {
+  width: 100%;
   text-align: left;
-  width: 70%;
+  margin-bottom: 2rem;
 }
 
 hr {
-  width: 15vw;
+  width: 96%;
 }
 
 #result {
-  text-align: left;
-  margin-right: 50%;
   width: 70%;
+  margin-right: 50%;
+  text-align: left;
 }
 
-@media screen and (max-width: 714px) {
-  body {
-    max-width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
-  }
+/* Responsive design using media queries (= practising one media queries*/
 
+@media screen and (max-width: 790px) {
   form {
-    background-color: rgb(255, 255, 255);
-    width: 90%;
-    height: 100vh;
-    padding: 0;
+    width: 100vw;
   }
   h2 {
-    text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
   }
   input[type="number"] {
-    width: 75%;
-    margin-top: 0;
-    height: 100%;
+    width: 40%;
+    margin-bottom: 1.1rem;
+    margin-top: 0.2rem;
+    padding: 0.4rem;
+  }
+  select {
+    width: 14%;
+    margin-left: 0.7rem;
+    padding: 0.1rem;
+  }
+  label {
+    font-size: 1rem;
+    margin: 0.3rem 0.7em;
+  }
+  #btn,
+  #reset {
+    width: 15%;
   }
   hr {
-    width: 75vw;
-  }
-  #img {
-    height: 0vh;
-    width: 0vw;
-  }
-
-  img {
-    display: none;
+    width: 50%;
   }
 }
 
-#img {
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-}
-#center {
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-a {
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 2px;
+@media screen and (max-width: 628px) {
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  input[type="number"] {
+    padding: 0.5rem;
+    margin-bottom: 1.1rem;
+    width: 70%;
+    margin-top: 0.2rem;
+  }
+
+  select {
+    padding: 0.1rem;
+    text-align: center;
+    margin-left: 1.5rem;
+
+    width: 27%;
+    border-radius: 0.7rem;
+  }
+  label {
+    margin: 0.3rem 0.7em;
+    font-size: 1.1rem;
+  }
+  #btn,
+  #reset {
+    width: 25%;
+  }
+  hr {
+    width: 80%;
+  }
 }
 
-img {
-  width: 200px;
-  height: 300px;
-  z-index: 2;
-  display: inline-block;
+/* Done this part starting with responsive, using Media query  */
+@media screen and (max-width: 520px) {
+  input[type="number"] {
+    padding: 0.5rem;
+    margin-bottom: 1.1rem;
+    width: 90%;
+    margin-top: 0.2rem;
+  }
+
+  select {
+    padding: 0.1rem;
+    text-align: center;
+    margin-left: 2rem;
+    width: 30%;
+    border-radius: 0.7rem;
+  }
+  label {
+    margin: 0.3rem 0.7em;
+    font-size: 1.1rem;
+  }
+  #btn,
+  #reset {
+    width: 55%;
+  }
+  hr {
+    width: 100%;
+  }
 }
 
-#home {
-  color: #151313;
-  text-decoration: none;
-  margin-left: 50px;
-  font-size: 1.1rem;
+/* Done this part starting with responsive, using Media query  */
+@media screen and (max-width: 420px) {
+  #form {
+    height: 120vh;
+  }
+  form {
+    margin-top: 3rem;
+  }
+  input[type="number"] {
+    padding: 0.5rem;
+    margin-bottom: 1.1rem;
+    width: 100%;
+    margin-top: 0.2rem;
+  }
+  h2 {
+    text-align: left;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  select {
+    padding: 0.1rem;
+    text-align: center;
+    margin-left: 2rem;
+    width: 30%;
+    border-radius: 0.7rem;
+  }
+  label {
+    margin: 0.3rem 0.7em;
+    font-size: 0.9rem;
+  }
+  #btn,
+  #reset {
+    width: 55%;
+  }
+  hr {
+    width: 100%;
+  }
 }

@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>ohms lag-kalkylator</title>
-    <!-- Author: Aman Arabzadeh -->
-    <!-- Course: Embedded System, Micro-controller & Micro-processor -->
-    <!--  -->
   </head>
   <body>
+    <!-- Aman Arabzadeh created this  -->
     <section id="form">
-      <h1></h1>
       <form>
         <h2>ohms lag-kalkylator<br />Ange två värden för att få resten.</h2>
         <div class="voltage-input">
@@ -24,14 +21,16 @@
             name="voltage"
             required
           />
-          <label for="voltage-units">Välj ett värde:</label>
+          <label class="custom-select" for="voltage-units"
+            >Välj ett värde:</label
+          >
           <select name="voltage-units" id="voltage-units">
             <option value="voltage">V</option>
             <option value="kilovolts">kilovolt (kV)</option>
             <option value="megavolts">Megavolt (MV)</option>
           </select>
         </div>
-        <!--  -->
+
         <div class="current-input">
           <label for="current">Ström ( I )</label>
           <input
@@ -41,7 +40,9 @@
             name="current"
             required
           />
-          <label for="current-units">Välj ett värde:</label>
+          <label class="custom-select" for="current-units"
+            >Välj ett värde:</label
+          >
           <select name="current-units" id="current-units">
             <option value="amps">amper (A)</option>
             <option value="kiloamps">Kiloamper (kA)</option>
@@ -58,7 +59,9 @@
             name="resistance"
             required
           />
-          <label for="resistance-units">Välj ett värde:</label>
+          <label class="custom-select" for="resistance-units"
+            >Välj ett värde:</label
+          >
           <select name="resistance-units" id="resistance-units">
             <option value="ohms">Ω</option>
             <option value="kiloohms">Kiloohm (kΩ)</option>
@@ -73,20 +76,9 @@
         <p id="ohms"></p>
         <p id="kilo"></p>
         <p id="mega"></p>
+        <p id="more"></p>
         <hr />
       </form>
-    </section>
-
-    <section id="img">
-      <div id="center">
-        <h4>
-          Bilden nedan togs från
-          <a href="https://en.wikipedia.org/wiki/Ohm%27s_law" target="_blank"
-            >wikipedia.</a
-          >
-        </h4>
-        <img src="./ohmslawwiki.png" alt="ohmslawexplained" />
-      </div>
     </section>
 
     <script src="main.js"></script>

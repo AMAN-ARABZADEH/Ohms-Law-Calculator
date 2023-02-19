@@ -2,7 +2,7 @@
 // Author: Aman Arabzadeh
 // Date: 2023-02-16
 // I built this calculator for my course in embedded systems at University.
-
+//         <!-- Aman Arabzadeh created this  -->
 document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("btn");
   const resetBtn = document.getElementById("reset");
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const kilo = document.getElementById("kilo");
   const mega = document.getElementById("mega");
   const resultsheading = document.getElementById("results");
+  const more = document.getElementById("more");
 
   // Listen button
   btn.addEventListener("click", calculate);
@@ -75,11 +76,12 @@ document.addEventListener("DOMContentLoaded", function () {
           result.innerHTML = "Motstånd: " + ohmsres.toFixed(6) + " ( Ω )";
           const kiloohmsres = voltageInV / currentInA / 1000;
           kilo.innerHTML =
-            "Motstånd: " + kiloohmsres.toFixed(10) + " Kiloohms ( kΩ )";
+            "Motstånd: " + kiloohmsres.toFixed(6) + " Kiloohms ( kΩ )";
           const megOhmsRes = voltageInV / currentInA / 1000000;
           console.log(megOhmsRes);
           mega.innerHTML =
-            "Motstånd: " + megOhmsRes.toFixed(10) + " megaohms ( MΩ )";
+            "Motstånd: " + megOhmsRes.toFixed(6) + " megaohms ( MΩ )";
+          moreInfo();
           styleResult();
         }
       }
@@ -96,10 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
         result.innerHTML = "ström: " + curr.toFixed(6) + " ( A ) ";
         ////////////////
         const kilocurr = voltageInV / resistanceInOhms / 1000;
-        kilo.innerHTML = "ström: " + kilocurr.toFixed(10) + " kiloamps ( kA ) ";
+        kilo.innerHTML = "ström: " + kilocurr.toFixed(6) + " kiloamps ( kA ) ";
         const megcurrs = voltageInV / resistanceInOhms / 1000000;
         console.log(kilocurr);
-        mega.innerHTML = "ström: " + megcurrs.toFixed(10) + " megaamps ( MA ) ";
+        mega.innerHTML = "ström: " + megcurrs.toFixed(6) + " megaamps ( MA ) ";
+        moreInfo();
         styleResult();
       }
     } else if (
@@ -116,11 +119,12 @@ document.addEventListener("DOMContentLoaded", function () {
         ////////////////
         const kilovolt = (currentInA * resistanceInOhms) / 1000;
         kilo.innerHTML =
-          "Spänning: " + kilovolt.toFixed(10) + " kilovolts ( kV) ";
+          "Spänning: " + kilovolt.toFixed(6) + " kilovolts ( kV) ";
         const megvolt = (currentInA * resistanceInOhms) / 1000000;
         console.log(megvolt);
         mega.innerHTML =
-          "Spänning: " + megvolt.toFixed(10) + " megavolts ( MV ) ";
+          "Spänning: " + megvolt.toFixed(6) + " megavolts ( MV ) ";
+        moreInfo();
         styleResult();
       }
     } else {
@@ -137,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     kilo.innerHTML = "";
     mega.innerHTML = "";
     resultsheading.innerHTML = "";
+    more.innerHTML = "";
   });
 
   function styleResult() {
@@ -151,5 +156,14 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     }
     return true;
+  }
+
+  function moreInfo() {
+    // Create h4 element
+    const h4 = document.createElement("h4");
+    h4.innerHTML =
+      'Hitta mer: <a href="https://en.wikipedia.org/wiki/Ohm%27s_law" target="_blank">wikipedia.</a>';
+    // Append h4 and img elements to the div element
+    more.appendChild(h4);
   }
 });
