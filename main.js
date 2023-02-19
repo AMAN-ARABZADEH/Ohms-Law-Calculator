@@ -131,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
       result.innerHTML = "Vänligen ange två värden att beräkna.";
       result.style.color = "red";
     }
+    condition = true;
   }
 
   resetBtn.addEventListener("click", function () {
@@ -142,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mega.innerHTML = "";
     resultsheading.innerHTML = "";
     more.innerHTML = "";
+    isMoreInfoDisplayed = false;
   });
 
   function styleResult() {
@@ -158,13 +160,18 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  let isMoreInfoDisplayed = false;
+
   function moreInfo() {
-    // Create h4 element
-    const h4 = document.createElement("h4");
-    h4.innerHTML =
-      'Hitta mer: <a href="https://en.wikipedia.org/wiki/Ohm%27s_law" target="_blank">wikipedia.</a>';
-    // Append h4 and img elements to the div element
-    //         <!-- Aman Arabzadeh created this  -->
-    more.appendChild(h4);
+    if (!isMoreInfoDisplayed) {
+      // Create h4 element
+      const h4 = document.createElement("h4");
+      h4.innerHTML =
+        'Hitta mer: <a href="https://en.wikipedia.org/wiki/Ohm%27s_law" target="_blank">wikipedia.</a>';
+      // Append h4 and img elements to the div element
+      //         <!-- Aman Arabzadeh created this  -->
+      more.appendChild(h4);
+      isMoreInfoDisplayed = true;
+    }
   }
 });
