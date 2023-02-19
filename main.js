@@ -164,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
     h4.innerHTML =
       'Hitta mer: <a href="https://en.wikipedia.org/wiki/Ohm%27s_law" target="_blank">wikipedia.</a>';
     // Append h4 and img elements to the div element
+    //         <!-- Aman Arabzadeh created this  -->
     more.appendChild(h4);
   }
 });
