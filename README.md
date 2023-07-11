@@ -7,5 +7,8 @@ Whether you're an electronics enthusiast or an electrical engineering student, t
 
 The link:
 https://ohmslagkalkylator.netlify.app/
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 
